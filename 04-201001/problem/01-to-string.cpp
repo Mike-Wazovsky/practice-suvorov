@@ -7,7 +7,15 @@ using Container = std::vector<int>;
 using ContainerIterator = Container::iterator;
 
 std::string to_string(ContainerIterator begin, ContainerIterator end) {
-    // TODO
+    std::string str = "{";
+    ContainerIterator it;
+    for (it = begin; it < end; it++) {
+        str += '0' + *it;
+        if (it != end - 1)
+            str += ", ";
+    }
+    str += '}';
+    return str;
 }
 
 int main() {
